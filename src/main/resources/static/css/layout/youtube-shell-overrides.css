@@ -1,0 +1,336 @@
+.yt-shell {
+  --yt-shell-bg: #fff;
+  --yt-shell-border: #e5e5e5;
+  --yt-shell-text: #0f0f0f;
+  --yt-shell-muted: #606060;
+  --yt-shell-surface: #fff;
+  --yt-shell-surface-alt: #f2f2f2;
+  --yt-shell-active: #000;
+  --yt-shell-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  color: var(--yt-shell-text);
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.yt-shell__masthead {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
+  height: 56px;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 240px;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--yt-shell-border);
+  backdrop-filter: blur(14px);
+}
+
+.yt-shell__masthead-start,
+.yt-shell__masthead-end {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.yt-shell__masthead-end {
+  justify-content: flex-end;
+}
+
+.yt-shell__masthead-center {
+  display: flex;
+  justify-content: center;
+}
+
+.yt-shell__icon-button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.yt-shell__icon-button:hover {
+  background: var(--yt-shell-surface-alt);
+}
+
+.yt-shell__icon-button svg,
+.yt-shell__guide-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.yt-shell__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.yt-shell__brand img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.yt-shell__brand-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.yt-shell__search,
+.yt-shell__mobile-search-form {
+  width: min(100%, 640px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px;
+  align-items: center;
+}
+
+.yt-shell__search-field,
+.yt-shell__mobile-search-field {
+  display: flex;
+}
+
+.yt-shell__search input,
+.yt-shell__mobile-search input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #c6c6c6;
+  border-right: 0;
+  border-radius: 999px 0 0 999px;
+  padding: 0 16px;
+  font-size: 1.4rem;
+  background: #fff;
+}
+
+.yt-shell__search-submit {
+  height: 40px;
+  border: 1px solid #d3d3d3;
+  border-radius: 0 999px 999px 0;
+  background: #f8f8f8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.yt-shell__search-submit svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.yt-shell__login {
+  min-width: 88px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid #c6c6c6;
+  color: #065fd4;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: #fff;
+}
+
+.yt-shell__guide,
+.yt-shell__drawer {
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  width: 240px;
+  padding: 12px;
+  background: var(--yt-shell-bg);
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.yt-shell__guide-nav,
+.yt-shell__drawer-nav {
+  display: grid;
+  gap: 4px;
+}
+
+.yt-shell__guide-item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.yt-shell__guide-item:hover {
+  background: #f2f2f2;
+}
+
+.yt-shell__guide-item.is-active {
+  background: #0f0f0f;
+  color: #fff;
+  font-weight: 600;
+}
+
+.yt-shell__guide-meta {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 16px 12px 0;
+  border-top: 1px solid var(--yt-shell-border);
+}
+
+.yt-shell__guide-meta a {
+  color: var(--yt-shell-muted);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.yt-shell__mobile-search {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 130;
+  padding: 8px 12px;
+  background: #fff;
+  border-bottom: 1px solid var(--yt-shell-border);
+}
+
+.yt-shell__mobile-search-form {
+  width: 100%;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.yt-shell__mobile-search input {
+  border-left: 1px solid #c6c6c6;
+  border-radius: 999px;
+}
+
+.yt-shell__overlay {
+  position: fixed;
+  inset: 56px 0 0 0;
+  z-index: 90;
+  border: 0;
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.yt-shell__drawer {
+  z-index: 110;
+  transform: translateX(-100%);
+  transition: transform 0.22s ease;
+  box-shadow: 12px 0 24px rgba(0, 0, 0, 0.18);
+}
+
+.yt-shell__drawer-header {
+  padding: 8px 8px 16px;
+}
+
+.yt-shell__page-content {
+  margin-top: 56px;
+  margin-left: 240px;
+}
+
+.yt-shell[data-guide-collapsed="true"] .yt-shell__guide {
+  width: 72px;
+}
+
+.yt-shell[data-guide-collapsed="true"] .yt-shell__guide-item {
+  grid-template-columns: 1fr;
+  gap: 8px;
+  justify-items: center;
+  padding: 12px 0;
+}
+
+.yt-shell[data-guide-collapsed="true"] .yt-shell__guide-label {
+  font-size: 1.05rem;
+}
+
+.yt-shell[data-guide-collapsed="true"] .yt-shell__guide-meta {
+  display: none;
+}
+
+.yt-shell[data-guide-collapsed="true"] ~ .yt-shell__page-content {
+  margin-left: 72px;
+}
+
+.yt-shell[data-mobile-drawer-open="true"] .yt-shell__drawer {
+  transform: translateX(0);
+}
+
+.yt-shell[data-mobile-drawer-open="true"] .yt-shell__overlay,
+.yt-shell[data-search-open="true"] .yt-shell__overlay {
+  display: block;
+}
+
+.yt-shell[data-search-open="true"] .yt-shell__mobile-search {
+  display: block;
+}
+
+.yt-shell__icon-button--mobile,
+.yt-shell__mobile-search {
+  display: none;
+}
+
+@media (max-width: 1312px) {
+  .yt-shell__masthead {
+    grid-template-columns: 220px minmax(0, 1fr) 164px;
+  }
+}
+
+@media (max-width: 900px) {
+  .yt-shell__masthead {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .yt-shell__masthead-center,
+  .yt-shell__guide {
+    display: none;
+  }
+
+  .yt-shell__icon-button--mobile {
+    display: inline-flex;
+  }
+
+  .yt-shell__page-content,
+  .yt-shell[data-guide-collapsed="true"] ~ .yt-shell__page-content {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .yt-shell__masthead {
+    padding-inline: 12px;
+  }
+
+  .yt-shell__brand-text {
+    display: none;
+  }
+
+  .yt-shell__login {
+    min-width: 72px;
+    padding-inline: 12px;
+  }
+}
+
+body.yt-shell-lock {
+  overflow: hidden;
+}
