@@ -37,17 +37,23 @@ ul, ol {
 .Auction-Content-Layout {
     display: flex;
     min-height: 100vh;
+    align-items: flex-start;
 }
 
 .Auction-Watch-Main {
     flex: 1;
     display: flex;
+    margin-top: 56px;
+    justify-content: center;
+    align-items: stretch;
     gap: 0;
-    padding: 20px 24px;
     max-width: 1440px;
+    align-self: flex-start;
 }
 
 .Auction-Video-Section {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     max-width: 900px;
     min-width: 0;
@@ -56,6 +62,7 @@ ul, ol {
 .Auction-Player-Container {
     width: 100%;
     position: relative;
+    flex-shrink: 0;
 }
 
 .Auction-Player-Screen {
@@ -69,9 +76,9 @@ ul, ol {
 
 .Auction-Bid-Panel {
     width: 360px;
+    height: auto;
     min-width: 320px;
     max-width: 400px;
-    height: calc(100vh - 40px);
     display: flex;
     flex-direction: column;
     border: 1px solid #e0e0e0;
@@ -80,6 +87,85 @@ ul, ol {
     background: #ffffff;
     margin-left: 24px;
     flex-shrink: 0;
+}
+
+.Auction-Item-Info {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.Auction-Item-Title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f0f0f;
+    line-height: 1.4;
+}
+
+.Auction-Gallery-Row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.Auction-Gallery-Profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.Auction-Gallery-Thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #aaaaaa;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.Auction-Gallery-Meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.Auction-Gallery-Name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f0f0f;
+}
+
+.Auction-Gallery-Followers {
+    font-size: 12px;
+    color: #606060;
+}
+
+.Auction-Gallery-FollowBtn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: #0f0f0f;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.Auction-Gallery-FollowBtn:hover {
+    background: #272727;
+}
+
+.Auction-Gallery-FollowBtn.following {
+    background: #f0f0f0;
+    color: #0f0f0f;
+}
+
+.Auction-Gallery-FollowBtn.following:hover {
+    background: #e0e0e0;
 }
 
 /* 입찰 헤더 */
@@ -131,12 +217,13 @@ ul, ol {
     text-align: center;
     gap: 10px;
     padding-bottom: 10px;
+    color: red;
 }
 
 /* 입찰 메시지 아이템 */
 .Auction-Bid-Item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
     padding: 6px 16px;
     transition: background 0.15s;
@@ -197,7 +284,6 @@ ul, ol {
     white-space: nowrap;
     word-break: break-all;
     min-width: 0;
-    color: #0f0f0f;
 }
 
 .Auction-RemainTimer-Time {
@@ -205,7 +291,6 @@ ul, ol {
     white-space: nowrap;
     word-break: break-all;
     min-width: 0;
-    color: red;
 }
 
 /* 입찰 입력창 */

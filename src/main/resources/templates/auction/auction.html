@@ -18,9 +18,31 @@
 
             <!-- 비디오 플레이어 영역 -->
             <section class="Auction-Video-Section">
+
+                <!-- 비디오 표시 부분 -->
                 <div class="Auction-Player-Container">
                     <div class="Auction-Player-Screen">
                         <!-- 비디오 또는 썸네일 -->
+                    </div>
+                </div>
+
+                <!-- 상품 정보 및 예술관 정보 부분 -->
+                <div class="Auction-Item-Info">
+                    <!-- 상품명 -->
+                    <h1 class="Auction-Item-Title">경매 상품 이름</h1>
+                    <!-- 예술관 정보 -->
+                    <div class="Auction-Gallery-Row">
+                        <!-- 좌측: 썸네일 + 예술관명 + 팔로워수 -->
+                        <div class="Auction-Gallery-Profile">
+                            <div class="Auction-Gallery-Thumbnail"></div>
+                            <div class="Auction-Gallery-Meta">
+                                <span class="Auction-Gallery-Name">예술관 이름</span>
+                                <span class="Auction-Gallery-Followers">팔로워 1,234명</span>
+                            </div>
+                        </div>
+
+                        <!-- 우측: 팔로우 버튼 -->
+                        <button class="Auction-Gallery-FollowBtn">팔로우</button>
                     </div>
                 </div>
             </section>
@@ -40,10 +62,8 @@
                     <!-- 입찰 남은 시간 -->
                     <div class="Auction-Bid-Timer">
                         <div class="Auction-Bid-Content">
-                            <!-- 입찰 전, 입창 중, 입창 종료 표시 변화 -->
-                            <span class="Auction-RemainTimer-Text">아직 입찰이 시작되지 않았습니다.</span>
-                            <!-- 입찰 중이지 않으면 off -->
-                            <span class="Auction-RemainTimer-Time off">00 : 00</span>
+                            <span class="Auction-RemainTimer-Text">남은 시간</span>
+                            <span class="Auction-RemainTimer-Time">00 : 00 : 00</span>
                         </div>
                     </div>
 
@@ -74,6 +94,7 @@
 
                 <!-- 입찰 입력창 -->
                 <div class="Auction-Bid-InputArea">
+                    <!-- 참가자 입력창 -->
                     <div class="Auction-Bid-InputWrapper">
                         <input class="Auction-Bid-Input" type="text" placeholder="입찰할 금액을 입력해주세요" />
                         <div class="Auction-Bid-InputActions">
@@ -84,6 +105,7 @@
                             </button>
                         </div>
                     </div>
+                    <!-- 경매자 제어 -->
                 </div>
             </aside>
         </main>
